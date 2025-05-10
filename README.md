@@ -39,11 +39,6 @@ Responsive and Mobile-Friendly UI
 
 ---
 
-🛠 Tech Stack
-
-
----
-
 🧩 System Flow
 
 flowchart TD
