@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+<section class="text-center py-12 px-4">
+  <h2 class="text-3xl font-bold text-indigo-800 mb-6">🏘️King County Gallery</h2>
+
+  <div class="overflow-hidden mx-auto rounded-lg shadow-lg max-w-6xl">
+    <div class="flex animate-scroll space-x-4">
+      {% for i in '123456'|make_list %}
+      <img src="{% static 'base/images/house' %}{{ i }}.jpg" alt="house {{ i }}" class="w-64 h-44 object-cover rounded-md">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  width: calc(250px * 10);
+  animation: scroll 25s linear infinite;
+}
+</style>
+{% endblock %}

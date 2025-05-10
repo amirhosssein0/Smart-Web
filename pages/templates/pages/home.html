@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Home - King County Housing{% endblock %}
+
+{% block content %}
+<br><br><br>
+<section class="relative bg-cover bg-center h-screen" style="background-image: url('{% static 'base/images/kingcounty-bg.jpg' %}');">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Find Your Dream Home in King County</h1>
+    <p class="text-xl md:text-2xl mb-6">Discover premium living with smart AI predictions.</p>
+    <a href="{% url 'predict:predict' %}" class="bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-full text-lg font-semibold transition-all">
+      Predict Your Home Price
+    </a>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Why King County?</h2>
+      <p class="text-gray-600 text-lg">The perfect blend of opportunity, lifestyle, and investment.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <img src="{% static 'base/images/nature.jpg' %}" class="w-14 h-14 mx-auto mb-4" alt="Nature">
+        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Nature & Lifestyle</h3>
+        <p class="text-gray-600">Enjoy scenic views, clean air, and abundant outdoor recreation.</p>
+      </div>
+
+      <div class="text-center bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <img src="{% static 'base/images/job.jpg' %}" class="w-14 h-14 mx-auto mb-4" alt="Jobs">
+        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Thriving Job Market</h3>
+        <p class="text-gray-600">Live where innovation meets opportunity — from tech to healthcare.</p>
+      </div>
+
+      <div class="text-center bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <img src="{% static 'base/images/investment.jpg' %}" class="w-14 h-14 mx-auto mb-4" alt="Investment">
+        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Smart Investments</h3>
+        <p class="text-gray-600">A stable, high-value real estate market built for long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br><br>
+{% endblock %}

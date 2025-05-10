@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}ورود{% endblock %}
+
+{% block content %}
+<section class="form-section">
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <a href="{% url 'account:password_reset' %}">Forget Password</a>
+</section>
+
+<style>
+    .form-section {
+        width: 400px;
+        margin: 30px auto;
+        padding: 30px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        text-align: right;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+    
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+    }
+    
+    .btn:hover {
+        background-color: #45a049;
+    }
+    </style>{% endblock %}

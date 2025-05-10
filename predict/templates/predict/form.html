@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+
+{% block title %}Predict Home Price{% endblock %}
+
+{% block content %}
+<section class="max-w-4xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-10">
+  <h2 class="text-3xl font-bold text-indigo-800 mb-6 text-center">🏠Predict House Price</h2>
+
+  <form method="post" class="space-y-6">
+    {% csrf_token %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {% for field in form %}
+      <div>
+        <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
+        {{ field }}
+        {% if field.help_text %}
+          <p class="text-xs text-gray-500 mt-1">{{ field.help_text }}</p>
+        {% endif %}
+        {% for error in field.errors %}
+          <p class="text-sm text-red-500 mt-1">{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md transition">
+       Predict
+    </button>
+  </form>
+
+  {% if price %}
+  <div class="mt-10 bg-green-50 border border-green-200 p-6 rounded-lg shadow text-center">
+    <h3 class="text-xl font-semibold text-green-700 mb-2">نتیجه پیش‌بینی:</h3>
+    <p class="text-2xl font-bold text-green-800">💵 {{ price|floatformat:0 }} دلار</p>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

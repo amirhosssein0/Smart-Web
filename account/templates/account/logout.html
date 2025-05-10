@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<section class="form-section">
+    <h2>Logout</h2>
+    <p>Are Sure??</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn logout-btn">Yes</button>
+    </form>
+
+    <a href="{% url 'pages:home' %}" class="btn cancel-btn">No</a>
+    <a href="{% url 'account:delete_account' %}" class="btn cancel-btn">Delete Account</a>
+
+</section>
+
+<style>
+.logout-btn {
+    background-color: #e74c3c;
+}
+
+.cancel-btn {
+    background-color: #3498db;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+</style>
+
+{% endblock %}

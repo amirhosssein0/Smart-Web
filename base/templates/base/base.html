@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your ideal home in King County. Browse properties, view maps, and get predictions.">
+  <meta name="author" content="King County Real Estate">
+  <meta name="keywords" content="King County, housing, real estate, map, property prediction">
+
+  <meta property="og:title" content="King County Housing">
+  <meta property="og:description" content="Find the best properties in King County.">
+  <meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+  <meta property="og:url" content="{% url 'pages:home' %}">
+
+  <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+  <script src="{% static 'base/js/base.js' %}" defer></script>
+
+  <title>{% block title %}King County Housing{% endblock %}</title>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  {% include 'base/header.html' %}
+
+  <main class="min-h-screen">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  {% include 'base/footer.html' %}
+
+</body>
+</html>

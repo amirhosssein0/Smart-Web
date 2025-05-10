@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}King County Housing Predict{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white shadow-2xl rounded-3xl p-12 text-center">
+    <h1 class="text-4xl font-bold text-indigo-700 mb-6">Our prediction:</h1>
+    <p class="text-green-600 text-6xl md:text-7xl font-extrabold">
+      {{ prediction|intcomma }}$
+    </p>
+  </div>
+</div>
+{% endblock %}
