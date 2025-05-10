@@ -93,13 +93,13 @@ http://127.0.0.1:8000/
 📚 Project Structure
 
 Smart-Web/
-├── accounts/          # User authentication (Signup, Login, Password Reset)
-├── home_prediction/   # House price prediction app
-├── static/            # Static files (CSS, JS, Images)
-├── templates/         # HTML templates
-├── Smart_Web/         # Project settings and configurations
-├── requirements.txt   # Python dependencies
-└── README.md          # This file
+├── accounts/          
+├── prediction/   
+├── static/            
+├── templates/         
+├── Smart_Web/        
+├── requirements.txt  
+└── README.md         
 
 
 ---
