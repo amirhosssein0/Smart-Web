@@ -3,11 +3,10 @@ from .forms import PredictForm
 import joblib
 import os
 import numpy as np
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import View
 
-class PredictView(LoginRequiredMixin, View):
+class PredictView(View):
     template_name = 'predict/form.html'
 
     def get(self, request):
