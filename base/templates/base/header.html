@@ -1,20 +1,21 @@
-<header class="bg-indigo-900 text-white py-4 shadow-md">
-    <div class="container flex justify-between items-center mx-auto px-4 max-w-7xl">
-      <h1 class="text-2xl font-bold">
-        <a href="{% url 'pages:home' %}" aria-label="Home" class="hover:text-indigo-300 transition">🏡 King County Housing</a>
+<header class="bg-indigo-900 text-white shadow">
+    <div class="flex justify-between items-center mx-auto px-4 max-w-7xl h-14">
+      <h1 class="text-xl sm:text-2xl font-bold tracking-tight">
+        <a href="{% url 'pages:home' %}" aria-label="Home" class="hover:text-indigo-300 transition-colors">🏡 King County Housing</a>
       </h1>
+
       <nav>
-        <ul class="flex space-x-6 font-semibold">
-          <li><a href="{% url 'pages:home' %}" class="hover:text-indigo-300 transition">Home</a></li>
-          <li><a href="{% url 'pages:aboutus' %}" class="hover:text-indigo-300 transition">About</a></li>
-          <li><a href="{% url 'pages:map' %}" class="hover:text-indigo-300 transition">Map</a></li>
-          <li><a href="{% url 'pages:gallery' %}" class="hover:text-indigo-300 transition">Gallery</a></li>
-          <li><a href="{% url 'predict:predict' %}" class="hover:text-indigo-300 transition">Predict</a></li>
+        <ul class="flex gap-4 sm:gap-6 font-semibold">
+          <li><a href="{% url 'pages:home' %}" class="hover:text-indigo-300 transition-colors">Home</a></li>
+          <li><a href="{% url 'pages:aboutus' %}" class="hover:text-indigo-300 transition-colors">About</a></li>
+          <li><a href="{% url 'pages:map' %}" class="hover:text-indigo-300 transition-colors">Map</a></li>
+          <li><a href="{% url 'pages:gallery' %}" class="hover:text-indigo-300 transition-colors">Gallery</a></li>
+          <li><a href="{% url 'predict:predict' %}" class="hover:text-indigo-300 transition-colors">Predict</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'account:logout' %}" class="hover:text-red-300 transition">Logout</a></li>
+          <li><a href="{% url 'account:logout' %}" class="hover:text-red-300 transition-colors">Logout</a></li>
           {% else %}
-          <li><a href="{% url 'account:login' %}" class="hover:text-indigo-300 transition">Login</a></li>
-          <li><a href="{% url 'account:signup' %}" class="hover:text-indigo-300 transition">Signup</a></li>
+          <li><a href="{% url 'account:login' %}" class="hover:text-indigo-300 transition-colors">Login</a></li>
+          <li><a href="{% url 'account:signup' %}" class="hover:text-indigo-300 transition-colors">Signup</a></li>
           {% endif %}
         </ul>
       </nav>

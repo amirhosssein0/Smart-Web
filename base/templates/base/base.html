@@ -7,18 +7,25 @@
   <meta name="description" content="Find your ideal home in King County. Browse properties, view maps, and get predictions.">
   <meta name="author" content="King County Real Estate">
   <meta name="keywords" content="King County, housing, real estate, map, property prediction">
+  <meta name="theme-color" content="#1e3a8a">
 
   <meta property="og:title" content="King County Housing">
   <meta property="og:description" content="Find the best properties in King County.">
   <meta property="og:image" content="{% static 'images/og-image.jpg' %}">
   <meta property="og:url" content="{% url 'pages:home' %}">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
   <script src="{% static 'base/js/base.js' %}" defer></script>
 
   <title>{% block title %}King County Housing{% endblock %}</title>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800" style="font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
 
   {% include 'base/header.html' %}
 
